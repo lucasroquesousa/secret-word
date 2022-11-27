@@ -1,5 +1,11 @@
+import { GlobalStyle } from "./Styles/GlobalStyle";
+
 function App() {
-  return <>Secret Word</>;
+  return (
+    <>
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
