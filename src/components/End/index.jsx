@@ -1,7 +1,12 @@
 import React from "react";
-
-const EndGame = () => {
-  return <div>index</div>;
+import { Container } from "./styles.module";
+const EndGame = ({ retryGame }) => {
+  return (
+    <Container>
+      <h2>Game Over</h2>
+      <button onClick={retryGame}>RESETAR JOGO</button>
+    </Container>
+  );
 };
 
 export default EndGame;

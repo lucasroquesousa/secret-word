@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "./styles.modules";
-const StartScreen = () => {
+const StartScreen = ({ startGame }) => {
   return (
     <Container>
       <h2>Clique no botão abaixo para começar a jogar</h2>
-      <button>COMEÇAR O JOGO</button>
+      <button onClick={startGame}>COMEÇAR O JOGO</button>
     </Container>
   );
 };

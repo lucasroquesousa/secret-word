@@ -15,18 +15,34 @@ const stage = [
 ];
 
 function App() {
+  // iniciando o jogo na tela startScreen
   const [gameStage, setGameStage] = useState(stage[0].name);
 
+  // lista de palavras do jogo
   const [words] = useState(wordList);
-  console.log(words);
+
+  // start game do jogo
+  const startGame = () => {
+    setGameStage(stage[1].name);
+  };
+
+  // processo de entrada de letras
+  const verifiyLetter = () => {
+    setGameStage(stage[2].name);
+  };
+
+  // reiniciar o jogo
+  const retryGame = () => {
+    setGameStage(stage[0].name);
+  };
 
   return (
     <>
       <GlobalStyle />
       <Header />
-      {gameStage === "start" && <StartScreen />}
-      {gameStage === "game" && <Game />}
-      {gameStage === "end" && <EndGame />}
+      {gameStage === "start" && <StartScreen startGame={startGame} />}
+      {gameStage === "game" && <Game verifiyLetter={verifiyLetter} />}
+      {gameStage === "end" && <EndGame retryGame={retryGame} />}
     </>
   );
 }
