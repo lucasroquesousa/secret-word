@@ -1,8 +1,12 @@
 import React from "react";
 import { Container } from "./styles.module";
-
+import logo from "../../assets/img/Secret_Word-removebg-preview.png";
 const Header = () => {
-  return <Container>index</Container>;
+  return (
+    <Container>
+      <img src={logo} alt="" />
+    </Container>
+  );
 };
 
 export default Header;
