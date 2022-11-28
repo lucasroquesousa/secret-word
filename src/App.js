@@ -38,11 +38,25 @@ function App() {
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
     console.log(word);
+    return { word, category };
   };
 
   const startGame = () => {
     // pickWord e PickCategory function
-    pickWordAndPickCategory();
+    const { word, category } = pickWordAndPickCategory();
+
+    // criar um array com as letras separadas
+    let wordLetters = word.split("");
+
+    wordLetters = wordLetters.map((letras) => letras.toLowerCase());
+
+    console.log(wordLetters);
+    console.log(word, category);
+
+    // setar os estados
+    setPickedWord(word);
+    setPickedCategory(category);
+    setLetters(letters);
     setGameStage(stage[1].name);
   };
 
