@@ -25,6 +25,7 @@ export const Container = styled.div`
     transition: 0.5s;
     cursor: pointer;
     :hover {
+      box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.24);
       background-color: blueviolet;
       color: yellowgreen;
     }

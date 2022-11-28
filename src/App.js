@@ -21,8 +21,28 @@ function App() {
   // lista de palavras do jogo
   const [words] = useState(wordList);
 
+  // selecionando as palavras
+  const [pickedWord, setPickedWord] = useState("");
+  const [pickedCategory, setPickedCategory] = useState("");
+  const [letters, setLetters] = useState([]);
+
   // start game do jogo
+  const pickWordAndPickCategory = () => {
+    //pick a random category
+    const categories = Object.keys(words);
+    const category =
+      categories[Math.floor(Math.random() * Object.keys(categories).length)];
+    console.log(category);
+
+    // pick a random word
+    /* const word = words[category](
+      Math.floor(Math.random() * words[category].length)
+    ); */
+  };
+
   const startGame = () => {
+    // pickWord e PickCategory function
+    pickWordAndPickCategory();
     setGameStage(stage[1].name);
   };
 
