@@ -4,7 +4,7 @@ import logo from "../../assets/img/Secret_Word-removebg-preview.png";
 const Header = () => {
   return (
     <Container>
-      <img src={logo} alt="" />
+      <img className="teste" src={logo} alt="" />
     </Container>
   );
 };
