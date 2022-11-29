@@ -18,6 +18,12 @@ export const Container = styled.div`
     text-shadow: 1px 2px 2px black;
     color: white;
   }
+  .pointSpan {
+    font-weight: bold;
+  }
+  .tip span {
+    color: yellow;
+  }
   p {
     font-size: 30px;
     text-shadow: 1px 2px 2px black;
@@ -43,42 +49,44 @@ export const Container = styled.div`
 `;
 
 export const WordContent = styled.div`
-  width: 100%;
-  span {
-    font-size: 30px;
-    text-shadow: 1px 2px 2px black;
-    color: white;
+  margin: 1.5rem;
+  width: 500px;
+  padding: 1.5rem;
+  border: 20px solid yellow;
+  display: flex;
+
+  .letter,
+  .blankSquare {
+    text-align: center;
+    font-size: 70px;
+    line-height: 1.5;
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+    text-transform: uppercase;
+    background-color: #ffff;
+    color: #000;
+    font-weight: bold;
   }
 `;
 export const LetterContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 25px;
-  padding: 15px;
-  p {
-    font-size: 30px;
-    text-shadow: 1px 2px 2px black;
-    color: yellow;
+  gap: 16px;
+  .letterContent p {
+    margin-bottom: 1.2rem;
   }
-  h3 {
-    font-size: 30px;
-    text-shadow: 1px 2px 2px black;
-    color: white;
+  .formContent form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   input {
-    width: 70px;
-    height: 70px;
-    border: 5px solid yellow;
-    border-radius: 10px;
-    font-size: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 10px;
+    height: 50px;
+    width: 50px;
+    font-size: 2em;
     text-align: center;
   }
 `;
