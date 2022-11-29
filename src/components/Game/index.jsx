@@ -1,5 +1,5 @@
 // React imports
-import React from "react";
+import React, { useState, useRef } from "react";
 // Css Imports
 import {
   Container,
@@ -18,6 +18,18 @@ const Game = ({
   guesses,
   score,
 }) => {
+  const [letter, setLetter] = useState("");
+  const letterInputRef = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    verifiyLetter(letter);
+
+    setLetter("");
+
+    letterInputRef.current.focus();
+  };
+
   return (
     <Container>
       <p>
@@ -43,20 +55,23 @@ const Game = ({
       <LetterContent>
         <p className="letterContent">Tente Advinhar uma letra da palavra: </p>
 
-        <form className="formContent">
+        <form className="formContent" onSubmit={handleSubmit}>
           <input
             className="inputContent"
             type="text"
             name="letter"
             maxLength="1"
             required
+            onChange={(e) => setLetter(e.target.value)}
+            value={letter}
+            ref={letterInputRef}
           />
+          <button>JOGAR!</button>
         </form>
-        <button>JOGAR!</button>
       </LetterContent>
       <WrongLettersContent>
         {wrongLetters.map((letter, i) => (
-          <span key={i}>{letter}, </span>
+          <span key={i}>Letra incorreta: {letter}, </span>
         ))}
       </WrongLettersContent>
       <button onClick={verifiyLetter}>FINALIZAR JOGO</button>
